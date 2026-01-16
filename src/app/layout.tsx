@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { ThemeProvider } from 'next-themes';
+
 import { Container } from '@/components/layout/container';
 
 import './globals.css';
@@ -15,9 +17,14 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      suppressHydrationWarning
+    >
       <body className='min-h-dvh bg-stone-50 text-stone-950 dark:bg-stone-950 dark:text-stone-50'>
-        <Container>{children}</Container>
+        <ThemeProvider>
+          <Container>{children}</Container>
+        </ThemeProvider>
       </body>
     </html>
   );
