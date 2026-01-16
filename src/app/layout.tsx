@@ -16,7 +16,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
-      <body className='min-h-dvh bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-slate-50'>
+      <body className='min-h-dvh bg-stone-50 text-stone-950 dark:bg-stone-950 dark:text-stone-50'>
         <Container>{children}</Container>
       </body>
     </html>
