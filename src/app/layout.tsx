@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { Container } from '@/components/layout/container';
+
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -7,14 +9,16 @@ export const metadata: Metadata = {
   description: 'A simple blog application built with Next.js.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+type RootLayoutProps = {
+  readonly children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body className='min-h-dvh bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-slate-50'>
+        <Container>{children}</Container>
+      </body>
     </html>
   );
 }
