@@ -6,7 +6,7 @@ export type Post = {
   content: string;
   coverImageUrl: string;
   isPublished: boolean;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
   author: string;
 };
