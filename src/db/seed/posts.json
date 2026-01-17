@@ -8,8 +8,8 @@
       "content": "O Next.js também é uma boa escolha para quem quer se preocupar com performance e SEO.",
       "coverImageUrl": "/images/bryen_8.png",
       "isPublished": true,
-      "createdAt": "2025-04-08T00:24:38.616Z",
-      "updatedAt": "2025-04-08T00:33:56.907Z",
+      "createdAt": "2024-09-15T14:32:22.450Z",
+      "updatedAt": "2024-09-15T16:45:10.200Z",
       "author": "Isabela Nunes"
     },
     {
@@ -20,8 +20,8 @@
       "content": "Em vez de configurar tudo manualmente, basta criar um arquivo com o nome certo e o Next.js entende que aquilo representa uma página.",
       "coverImageUrl": "/images/bryen_6.png",
       "isPublished": true,
-      "createdAt": "2025-04-07T00:24:38.616Z",
-      "updatedAt": "2025-04-07T00:33:56.907Z",
+      "createdAt": "2026-01-15T09:18:45.123Z",
+      "updatedAt": "2026-01-16T10:55:11.413Z",
       "author": "Marina Duarte"
     },
     {
@@ -32,8 +32,8 @@
       "content": "Muitas empresas e desenvolvedores individuais escolhem o Next.js justamente porque ele consegue unir simplicidade com recursos avançados.",
       "coverImageUrl": "/images/bryen_9.png",
       "isPublished": true,
-      "createdAt": "2025-04-06T00:24:38.616Z",
-      "updatedAt": "2025-04-06T00:33:56.907Z",
+      "createdAt": "2025-06-08T11:27:33.789Z",
+      "updatedAt": "2025-08-12T10:15:42.555Z",
       "author": "Pedro Martins"
     },
     {
@@ -45,8 +45,8 @@
       "excerpt": "Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,",
       "coverImageUrl": "/images/bryen_3.png",
       "isPublished": true,
-      "createdAt": "2025-04-05T00:24:38.616Z",
-      "updatedAt": "2025-04-05T00:33:56.907Z"
+      "createdAt": "2022-07-20T08:50:15.321Z",
+      "updatedAt": "2022-09-03T13:22:48.666Z"
     },
     {
       "id": "6b204dab-2312-4525-820a-a0463560835f",
@@ -56,8 +56,8 @@
       "content": "Também ajuda a organizar melhor os arquivos e componentes, o que facilita a manutenção do projeto no longo prazo.",
       "coverImageUrl": "/images/bryen_5.png",
       "isPublished": false,
-      "createdAt": "2025-03-30T07:11:33",
-      "updatedAt": "2025-04-05T00:14:03.175Z",
+      "createdAt": "2023-02-14T15:44:28.901Z",
+      "updatedAt": "2023-03-01T09:30:12.444Z",
       "author": "Lucas Lima"
     },
     {
@@ -68,8 +68,8 @@
       "content": "Ele surgiu como uma solução para simplificar tarefas comuns que os desenvolvedores enfrentam ao criar sites e aplicações.",
       "coverImageUrl": "/images/bryen_1.png",
       "isPublished": true,
-      "createdAt": "2025-03-08T13:13:13",
-      "updatedAt": "2025-03-08T13:13:13",
+      "createdAt": "2024-12-03T18:05:19.234Z",
+      "updatedAt": "2024-12-03T18:05:19.234Z",
       "author": "João Silva"
     },
     {
@@ -80,8 +80,8 @@
       "content": "Next.js é um framework de desenvolvimento criado para facilitar a construção de aplicações web modernas usando React.",
       "coverImageUrl": "/images/bryen_0.png",
       "isPublished": true,
-      "createdAt": "2025-02-22T04:32:54",
-      "updatedAt": "2025-02-22T04:32:54",
+      "createdAt": "2023-08-18T12:21:07.567Z",
+      "updatedAt": "2023-08-18T12:21:07.567Z",
       "author": "Ana Costa"
     },
     {
@@ -92,8 +92,8 @@
       "content": "Isso deixa o fluxo de trabalho mais natural, especialmente para quem já está acostumado com a estrutura de pastas e arquivos.",
       "coverImageUrl": "/images/bryen_7.png",
       "isPublished": true,
-      "createdAt": "2025-02-11T20:59:30",
-      "updatedAt": "2025-02-11T20:59:30",
+      "createdAt": "2024-05-25T07:38:51.890Z",
+      "updatedAt": "2024-07-10T14:55:23.112Z",
       "author": "Thiago Ribeiro"
     },
     {
@@ -104,8 +104,8 @@
       "content": "Por exemplo, ele pode dividir o código em partes menores para que o navegador só carregue o que for necessário.",
       "coverImageUrl": "/images/bryen_4.png",
       "isPublished": true,
-      "createdAt": "2025-01-15T04:54:26",
-      "updatedAt": "2025-01-15T00:54:26",
+      "createdAt": "2022-10-30T10:12:35.678Z",
+      "updatedAt": "2022-11-15T16:20:41.333Z",
       "author": "Bianca Rocha"
     },
     {
@@ -116,8 +116,8 @@
       "content": "o Next.js já vem com várias decisões prontas, permitindo que você comece a desenvolver mais rapidamente.",
       "coverImageUrl": "/images/bryen_2.png",
       "isPublished": false,
-      "createdAt": "2025-01-07T22:54:10",
-      "updatedAt": "2025-01-07T22:54:10",
+      "createdAt": "2025-09-12T20:16:58.246Z",
+      "updatedAt": "2025-09-12T20:16:58.246Z",
       "author": "Carla Mendes"
     }
   ]
