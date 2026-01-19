@@ -9,7 +9,10 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: {
+    default: 'Blog',
+    template: '%s | Blog',
+  },
   description: 'A simple blog application built with Next.js.',
 };
 

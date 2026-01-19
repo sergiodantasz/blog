@@ -1,3 +1,9 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page not found',
+};
+
 export default function NotFound() {
   return (
     <div className='my-auto flex h-fit w-fit flex-col items-stretch justify-center border border-dashed border-stone-300 text-center dark:border-stone-700'>
