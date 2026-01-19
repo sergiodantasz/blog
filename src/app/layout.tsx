@@ -26,7 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className='flex min-h-dvh flex-col bg-stone-50 text-stone-950 dark:bg-stone-950 dark:text-stone-50'>
         <ThemeProvider>
           <ThemeToggle />
-          <div className='flex-1'>
+          <div className='flex flex-1'>
             <Container>{children}</Container>
           </div>
           <Container>
