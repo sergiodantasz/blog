@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { findAllPublishedPostsCached } from '@/lib/posts/queries';
 import { groupPostsByYear, sortGroupedPostsByYear } from '@/lib/posts/transform';
 
@@ -8,7 +10,7 @@ export async function PostList() {
   const groupedPosts = groupPostsByYear(posts);
   const sortedPosts = sortGroupedPostsByYear(groupedPosts);
   return (
-    <div className='[&>div:last-child>div:last-child>div:last-child]:border-b [&>div:last-child>div:last-child>div:last-child]:border-b-stone-200 [&>div:last-child>div:last-child>div:last-child]:dark:border-b-stone-800'>
+    <div className='[&>div:last-child>div:last-child>a:last-child]:border-b [&>div:last-child>div:last-child>a:last-child]:border-b-stone-200 [&>div:last-child>div:last-child>a:last-child]:dark:border-b-stone-800'>
       {sortedPosts.map(({ year, posts }) => (
         <div
           className='grid grid-cols-[auto_1fr] gap-x-28 border-t border-t-stone-200 dark:border-t-stone-800'
@@ -21,8 +23,9 @@ export async function PostList() {
             {posts.map((post) => {
               const date = formatDayMonth(post.createdAt);
               return (
-                <div
-                  className='grid grid-cols-[1fr_auto] gap-8'
+                <Link
+                  href={`/post/${post.slug}`}
+                  className='grid grid-cols-[1fr_auto] gap-8 px-2 transition-all hover:bg-stone-100 dark:hover:bg-stone-900'
                   key={post.id}
                 >
                   <span className='py-3 font-medium'>{post.title}</span>
@@ -32,7 +35,7 @@ export async function PostList() {
                   >
                     {date}
                   </time>
-                </div>
+                </Link>
               );
             })}
           </div>
