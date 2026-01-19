@@ -1,8 +1,0 @@
-type PageProps = {
-  params: Promise<{ slug: string }>;
-};
-
-export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
-  return <h1>/post/{slug}/delete</h1>;
-}
