@@ -1,11 +1,10 @@
 import { groupPostsByYear, sortGroupedPostsByYear } from '@/lib/posts';
-
-import { postRepository } from '@/repositories/post-repository';
+import { findAllPublishedPostsCached } from '@/lib/queries';
 
 import { formatDayMonth } from '@/utils/date';
 
 export async function PostList() {
-  const posts = await postRepository.findAll();
+  const posts = await findAllPublishedPostsCached();
   const groupedPosts = groupPostsByYear(posts);
   const sortedPosts = sortGroupedPostsByYear(groupedPosts);
   return (
