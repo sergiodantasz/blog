@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+import { SafeMarkdown } from '@/components/layout/safe-markdown';
+
 import { findPostBySlugCached } from '@/lib/posts/queries';
 
 import { Post } from '@/models/post';
@@ -20,5 +22,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const post = await findPostBySlugCached(slug);
-  return <h1>{post.title}</h1>;
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <SafeMarkdown markdown={post.content} />
+    </div>
+  );
 }
