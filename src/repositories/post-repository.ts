@@ -5,6 +5,7 @@ import { Post } from '@/models/post';
 
 export interface PostRepository {
   findAll(): Promise<Post[]>;
+  findAllPublished(): Promise<Post[]>;
   findById(id: Post['id']): Promise<Post>;
 }
 
@@ -36,12 +37,20 @@ export class JsonPostRepository implements PostRepository {
 
   async findAll(): Promise<Post[]> {
     await this.simulateWaiting();
-    return this.loadPostsFromJsonFile();
+    const posts = await this.loadPostsFromJsonFile();
+    return posts;
+  }
+
+  async findAllPublished(): Promise<Post[]> {
+    await this.simulateWaiting();
+    const posts = await this.loadPostsFromJsonFile();
+    const publishedPosts = posts.filter((post) => post.isPublished);
+    return publishedPosts;
   }
 
   async findById(id: Post['id']) {
     await this.simulateWaiting();
-    const posts = await this.findAll();
+    const posts = await this.loadPostsFromJsonFile();
     const post = posts.find((p) => p.id === id);
     if (!post) {
       throw new Error(`Post with id "${id}" not found.`);
