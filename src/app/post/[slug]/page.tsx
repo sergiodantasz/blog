@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { findPostBySlugCached } from '@/lib/queries';
+import { findPostBySlugCached } from '@/lib/posts/queries';
 
 import { Post } from '@/models/post';
 

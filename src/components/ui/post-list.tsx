@@ -1,5 +1,5 @@
-import { groupPostsByYear, sortGroupedPostsByYear } from '@/lib/posts';
-import { findAllPublishedPostsCached } from '@/lib/queries';
+import { findAllPublishedPostsCached } from '@/lib/posts/queries';
+import { groupPostsByYear, sortGroupedPostsByYear } from '@/lib/posts/transform';
 
 import { formatDayMonth } from '@/utils/date';
 
