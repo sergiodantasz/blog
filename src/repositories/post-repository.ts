@@ -7,12 +7,13 @@ export interface PostRepository {
   findAll(): Promise<Post[]>;
   findAllPublished(): Promise<Post[]>;
   findById(id: Post['id']): Promise<Post>;
+  findBySlug(slug: Post['slug']): Promise<Post>;
 }
 
 const ROOT_DIR = process.cwd();
 const JSON_POSTS_FILE_PATH = resolve(ROOT_DIR, 'src', 'db', 'seed', 'posts.json');
 
-const WAITING_TIME_IN_MS = 5000;
+const WAITING_TIME_IN_MS = 0;
 
 type JsonPost = Omit<Post, 'createdAt' | 'updatedAt'> & { createdAt: string; updatedAt: string };
 
@@ -48,12 +49,22 @@ export class JsonPostRepository implements PostRepository {
     return publishedPosts;
   }
 
-  async findById(id: Post['id']) {
+  async findById(id: Post['id']): Promise<Post> {
     await this.simulateWaiting();
     const posts = await this.loadPostsFromJsonFile();
     const post = posts.find((p) => p.id === id);
     if (!post) {
       throw new Error(`Post with id "${id}" not found.`);
+    }
+    return post;
+  }
+
+  async findBySlug(slug: Post['slug']): Promise<Post> {
+    await this.simulateWaiting();
+    const posts = await this.loadPostsFromJsonFile();
+    const post = posts.find((p) => p.slug === slug);
+    if (!post) {
+      throw new Error(`Post with slug "${slug}" not found.`);
     }
     return post;
   }
