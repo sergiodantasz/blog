@@ -4,7 +4,7 @@ export function Footer() {
       <p>
         Developed by Sérgio · <span className='font-medium'>For study purposes only</span> ·{' '}
         <a
-          className='underline underline-offset-4 transition-all hover:text-stone-300'
+          className='underline underline-offset-4 transition-all hover:text-stone-700 dark:hover:text-stone-300'
           href='http://github.com/sergiodantasz/blog'
           target='_blank'
           rel='noopener noreferrer'
