@@ -25,7 +25,7 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const post = await findPostBySlugCached(slug);
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex min-w-0 flex-col gap-4 sm:gap-8'>
       <div>
         <h1 className='text-lg font-bold'>{post.title}</h1>
         <span className='text-sm text-stone-600 dark:text-stone-400'>
