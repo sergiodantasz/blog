@@ -13,7 +13,7 @@ export async function PostList() {
     <div className='[&>div:last-child>div:last-child>a:last-child]:border-b [&>div:last-child>div:last-child>a:last-child]:border-b-stone-200 [&>div:last-child>div:last-child>a:last-child]:dark:border-b-stone-800'>
       {sortedPosts.map(({ year, posts }) => (
         <div
-          className='grid grid-cols-[auto_1fr] gap-x-28 border-t border-t-stone-200 dark:border-t-stone-800'
+          className='grid grid-cols-[auto_1fr] gap-16 border-t border-t-stone-200 sm:gap-32 dark:border-t-stone-800'
           key={year}
         >
           <div className='flex h-12 items-center justify-center text-sm text-stone-600 dark:text-stone-400'>
@@ -28,7 +28,7 @@ export async function PostList() {
                   className='grid grid-cols-[1fr_auto] gap-8 px-2 transition-all hover:bg-stone-100 dark:hover:bg-stone-900'
                   key={post.id}
                 >
-                  <span className='py-3 font-medium'>{post.title}</span>
+                  <span className='py-3 font-semibold'>{post.title}</span>
                   <time
                     className='flex h-12 items-center justify-center text-sm text-stone-600 dark:text-stone-400'
                     dateTime={date}
