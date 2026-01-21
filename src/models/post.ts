@@ -4,7 +4,6 @@ export type Post = {
   slug: string;
   excerpt: string;
   content: string;
-  coverImageUrl: string;
   isPublished: boolean;
   createdAt: Date;
   updatedAt: Date;
