@@ -1,3 +1,5 @@
+'use client';
+
 type ErrorBaseProps = {
   statusCode: 404 | 500;
   description: string;
