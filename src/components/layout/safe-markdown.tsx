@@ -8,7 +8,7 @@ type SafeMarkdownProps = {
 
 export function SafeMarkdown({ markdown }: SafeMarkdownProps) {
   return (
-    <div className='prose max-w-none prose-stone dark:prose-invert'>
+    <div className='prose w-full max-w-none prose-stone dark:prose-invert'>
       <Markdown
         rehypePlugins={[rehypeSanitize]}
         remarkPlugins={[remarkGfm]}
