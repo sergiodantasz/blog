@@ -7,5 +7,4 @@ const sqlite = new Database('db.sqlite');
 
 export const db = drizzle(sqlite, {
   schema: { posts },
-  logger: true,
 });
