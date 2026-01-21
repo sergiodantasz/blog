@@ -5,13 +5,12 @@ import { ThemeProvider } from 'next-themes';
 import { Footer } from '@/components/ui/footer';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 
+import { TITLE_METADATA } from '@/utils/metadata';
+
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Blog',
-    template: '%s | Blog',
-  },
+  title: TITLE_METADATA,
   description: 'A simple blog application built with Next.js.',
 };
 
