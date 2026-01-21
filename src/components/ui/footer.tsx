@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className='mx-auto w-fit text-sm text-stone-600 dark:text-stone-400'>
+    <footer className='mx-auto p-4 text-center text-sm text-stone-600 dark:text-stone-400'>
       <p>
         Developed by Sérgio · <span className='font-medium'>For study purposes only</span> ·{' '}
         <a
