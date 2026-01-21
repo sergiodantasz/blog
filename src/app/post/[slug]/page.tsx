@@ -6,6 +6,8 @@ import { findPostBySlugCached } from '@/lib/posts/queries';
 
 import { Post } from '@/models/post';
 
+import { formatMonthDayYear } from '@/utils/date';
+
 type PageProps = {
   params: Promise<{ slug: Post['slug'] }>;
 };
@@ -23,8 +25,14 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const post = await findPostBySlugCached(slug);
   return (
-    <div>
-      <h1>{post.title}</h1>
+    <div className='flex flex-col gap-8'>
+      <div>
+        <h1 className='text-lg font-bold'>{post.title}</h1>
+        <span className='text-sm text-stone-600 dark:text-stone-400'>
+          {formatMonthDayYear(post.createdAt)}
+        </span>
+      </div>
+      <hr className='border-stone-200 dark:border-stone-800' />
       <SafeMarkdown markdown={post.content} />
     </div>
   );
