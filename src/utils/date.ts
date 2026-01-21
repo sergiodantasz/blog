@@ -1,6 +1,10 @@
 import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import { enUS } from 'date-fns/locale';
 
 export function formatDayMonth(date: Date) {
-  return format(date, 'dd/MM', { locale: ptBR });
+  return format(date, 'dd/MM', { locale: enUS });
+}
+
+export function formatMonthDayYear(date: Date) {
+  return format(date, 'MMMM do, yyyy', { locale: enUS });
 }
