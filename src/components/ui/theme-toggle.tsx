@@ -14,9 +14,9 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label='Toggle theme'
       title='Toggle theme'
-      className='group absolute top-5 right-5 flex size-10 cursor-pointer items-center justify-center rounded-full bg-stone-200 transition-all hover:bg-stone-300 dark:bg-stone-800 dark:hover:bg-stone-700'
+      className='absolute top-4 right-4 flex size-10 cursor-pointer items-center justify-center rounded-full bg-stone-200 transition-all hover:bg-stone-300 dark:bg-stone-800 dark:hover:bg-stone-700'
     >
-      <SunMoonIcon className='size-5 transition-all group-hover:scale-110 group-active:scale-90 group-active:rotate-12' />
+      <SunMoonIcon className='size-5' />
     </button>
   );
 }
