@@ -24,7 +24,7 @@ export async function PostList() {
               const date = formatDayMonth(post.createdAt);
               return (
                 <Link
-                  href={`/post/${post.slug}`}
+                  href={`/posts/${post.slug}`}
                   className='grid grid-cols-[1fr_auto] gap-8 px-2 transition-all hover:bg-stone-100 dark:hover:bg-stone-900'
                   key={post.id}
                 >
