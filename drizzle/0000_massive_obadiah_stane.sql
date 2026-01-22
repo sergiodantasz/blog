@@ -1,5 +1,5 @@
 CREATE TABLE `users` (
-	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`id` text PRIMARY KEY NOT NULL,
 	`title` text NOT NULL,
 	`slug` text NOT NULL,
 	`excerpt` text NOT NULL,
