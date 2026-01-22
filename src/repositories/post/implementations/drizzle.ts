@@ -1,4 +1,4 @@
-import { db } from '@/db';
+import { db } from '@/db/client';
 
 import type { Post } from '@/models/post';
 

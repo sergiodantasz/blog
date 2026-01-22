@@ -1,6 +1,6 @@
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-import { date } from '@/db/custom-types';
+import { date } from '@/db/types';
 
 export const posts = sqliteTable('users', {
   id: text('id').primaryKey(),

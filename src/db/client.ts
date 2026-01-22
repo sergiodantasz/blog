@@ -3,7 +3,9 @@ import { drizzle } from 'drizzle-orm/better-sqlite3';
 
 import { posts } from '@/db/schema';
 
-const sqlite = new Database('db.sqlite');
+import { DATABASE_URL } from '@/config/env';
+
+const sqlite = new Database(DATABASE_URL);
 
 export const db = drizzle(sqlite, {
   schema: { posts },
