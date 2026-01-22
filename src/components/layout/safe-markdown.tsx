@@ -13,7 +13,7 @@ export function SafeMarkdown({ markdown }: SafeMarkdownProps) {
         rehypePlugins={[rehypeSanitize]}
         remarkPlugins={[remarkGfm]}
         components={{
-          table: ({ node, ...props }) => (
+          table: (props) => (
             <div className='overflow-x-auto'>
               <table {...props} />
             </div>
