@@ -4,7 +4,7 @@ import { cache } from 'react';
 
 import { Post } from '@/models/post';
 
-import { postRepository } from '@/repositories/post-repository';
+import { postRepository } from '@/repositories/post';
 
 export const findAllCached = cache(async () => await postRepository.findAll());
 

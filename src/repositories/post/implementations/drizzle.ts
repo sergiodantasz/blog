@@ -2,7 +2,7 @@ import { db } from '@/db';
 
 import type { Post } from '@/models/post';
 
-import type { PostRepository } from '@/repositories/post-repository';
+import type { PostRepository } from '@/repositories/post/repository';
 
 export class DrizzlePostRepository implements PostRepository {
   async findAll(): Promise<Post[]> {

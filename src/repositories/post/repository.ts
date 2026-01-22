@@ -1,6 +1,6 @@
 import type { Post } from '@/models/post';
 
-import { DrizzlePostRepository } from '@/repositories/drizzle-post-repository';
+import { DrizzlePostRepository } from '@/repositories/post/implementations/drizzle';
 
 export interface PostRepository {
   findAll(): Promise<Post[]>;

@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 import type { Post } from '@/models/post';
 
-import type { PostRepository } from '@/repositories/post-repository';
+import type { PostRepository } from '@/repositories/post/repository';
 
 const ROOT_DIR = process.cwd();
 const JSON_POSTS_FILE_PATH = resolve(ROOT_DIR, 'src', 'db', 'seed', 'posts.json');
