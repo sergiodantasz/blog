@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-import { findAllPublishedPostsCached } from '@/lib/posts/queries';
+import { findAllPublishedCached } from '@/lib/posts/queries';
 import { groupPostsByYear, sortGroupedPostsByYear } from '@/lib/posts/transform';
 
 import { formatDayMonth } from '@/utils/date';
 
 export async function PostList() {
-  const posts = await findAllPublishedPostsCached();
+  const posts = await findAllPublishedCached();
   const groupedPosts = groupPostsByYear(posts);
   const sortedPosts = sortGroupedPostsByYear(groupedPosts);
   return (

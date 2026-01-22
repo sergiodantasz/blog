@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import { SafeMarkdown } from '@/components/layout/safe-markdown';
 
-import { findPostBySlugCached } from '@/lib/posts/queries';
+import { findPublishedBySlugCached } from '@/lib/posts/queries';
 
 import { Post } from '@/models/post';
 
@@ -14,7 +14,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await findPostBySlugCached(slug);
+  const post = await findPublishedBySlugCached(slug);
   return {
     title: post.title,
     description: post.excerpt,
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const post = await findPostBySlugCached(slug);
+  const post = await findPublishedBySlugCached(slug);
   return (
     <div className='flex min-w-0 flex-col gap-4 sm:gap-8'>
       <div>
