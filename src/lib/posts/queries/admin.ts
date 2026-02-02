@@ -17,7 +17,7 @@ export async function findAllCached() {
 export async function findByIdCached(id: Post['id']) {
   const post = await unstable_cache(
     async (id: Post['id']) => {
-      const post = await postRepository.findById(id);
+      const post = await postRepository.findById(id).catch(() => null);
       if (!post) notFound();
       return post;
     },
