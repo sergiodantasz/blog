@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { findAllPublishedCached } from '@/lib/posts/queries';
+import { findAllPublishedCached } from '@/lib/posts/queries/public';
 import { groupPostsByYear, sortGroupedPostsByYear } from '@/lib/posts/transform';
 
 import { formatDayMonth } from '@/utils/date';

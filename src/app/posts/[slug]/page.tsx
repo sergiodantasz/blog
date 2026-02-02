@@ -2,11 +2,13 @@ import { Metadata } from 'next';
 
 import { SafeMarkdown } from '@/components/layout/safe-markdown';
 
-import { findPublishedBySlugCached } from '@/lib/posts/queries';
+import { findPublishedBySlugCached } from '@/lib/posts/queries/public';
 
 import { Post } from '@/models/post';
 
 import { formatMonthDayYear } from '@/utils/date';
+
+export const dynamic = 'force-static';
 
 type PageProps = {
   params: Promise<{ slug: Post['slug'] }>;

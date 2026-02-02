@@ -1,5 +1,13 @@
 import { Post } from '@/models/post';
 
+export function reviveDates(post: Post): Post {
+  return {
+    ...post,
+    createdAt: new Date(post.createdAt),
+    updatedAt: new Date(post.updatedAt),
+  };
+}
+
 export function sortPostsByDate(posts: Post[], direction: 'asc' | 'desc') {
   return [...posts].sort((a, b) => {
     const diff = b.createdAt.getTime() - a.createdAt.getTime();
