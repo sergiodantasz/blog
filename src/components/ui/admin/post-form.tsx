@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
+import { MarkdownEditor } from '@/components/ui/markdown-editor';
 
 export function PostForm() {
   return (
@@ -16,6 +17,7 @@ export function PostForm() {
         placeholder='Type your surname...'
       />
       <Checkbox labelText='Published?' />
+      <MarkdownEditor textarea={{ name: 'some-name' }} />
       <Button>Create</Button>
     </form>
   );
