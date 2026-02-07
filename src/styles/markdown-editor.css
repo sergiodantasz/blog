@@ -1,0 +1,28 @@
+[data-color-mode='light'] .wmde-markdown,
+[data-color-mode='light'] .wmde-markdown-var {
+  --color-canvas-default: var(--color-stone-100) !important;
+  --color-canvas-subtle: var(--color-stone-200) !important;
+  --color-fg-default: var(--color-stone-900) !important;
+  --color-fg-muted: var(--color-stone-500) !important;
+  --color-border-default: var(--color-stone-300) !important;
+  --color-border-muted: var(--color-stone-200) !important;
+  --color-accent-fg: var(--color-stone-700) !important;
+}
+
+[data-color-mode='dark'] .wmde-markdown,
+[data-color-mode='dark'] .wmde-markdown-var {
+  --color-canvas-default: var(--color-stone-900) !important;
+  --color-canvas-subtle: var(--color-stone-800) !important;
+  --color-fg-default: var(--color-stone-50) !important;
+  --color-fg-muted: var(--color-stone-400) !important;
+  --color-border-default: var(--color-stone-700) !important;
+  --color-border-muted: var(--color-stone-800) !important;
+  --color-accent-fg: var(--color-stone-300) !important;
+}
+
+[data-disabled='true'] {
+  @apply cursor-not-allowed;
+}
+[data-disabled='true'] .w-md-editor {
+  @apply pointer-events-none opacity-50;
+}
