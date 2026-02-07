@@ -2,7 +2,7 @@
 
 import { useTheme as useNextTheme } from 'next-themes';
 
-import type { Theme } from '@/types/theme';
+type Theme = 'light' | 'dark';
 
 export function useTheme() {
   const { theme, setTheme, resolvedTheme } = useNextTheme();
