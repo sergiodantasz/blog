@@ -4,7 +4,6 @@ export function reviveDates(post: Post): Post {
   return {
     ...post,
     createdAt: new Date(post.createdAt),
-    updatedAt: new Date(post.updatedAt),
   };
 }
 

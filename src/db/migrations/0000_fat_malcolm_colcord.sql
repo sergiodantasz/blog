@@ -6,7 +6,6 @@ CREATE TABLE `users` (
 	`content` text NOT NULL,
 	`is_published` integer NOT NULL,
 	`created_at` text NOT NULL,
-	`updated_at` text NOT NULL,
 	`author` text NOT NULL
 );
 --> statement-breakpoint

@@ -14,7 +14,6 @@ export function createRandomPost(): InsertPost {
     content: faker.lorem.paragraphs({ min: 5, max: 10 }),
     isPublished: faker.datatype.boolean({ probability: 0.7 }),
     createdAt,
-    updatedAt: faker.date.between({ from: createdAt, to: new Date() }),
     author: faker.person.fullName(),
   };
 }

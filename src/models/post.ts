@@ -6,6 +6,5 @@ export type Post = {
   content: string;
   isPublished: boolean;
   createdAt: Date;
-  updatedAt: Date;
   author: string;
 };
