@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { SafeMarkdown } from '@/components/layout/safe-markdown';
 
@@ -17,6 +18,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await findPublishedBySlugCached(slug);
+  if (!post) notFound();
   return {
     title: post.title,
     description: post.excerpt,
@@ -26,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const post = await findPublishedBySlugCached(slug);
+  if (!post) notFound();
   return (
     <div className='flex min-w-0 flex-col gap-4 sm:gap-8'>
       <div>
