@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import ErrorBase from '@/components/ui/error-base';
+import { ErrorBase } from '@/components/ui/error-base';
 
 export const metadata: Metadata = {
   title: 'Page not found',

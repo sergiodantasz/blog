@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import ErrorBase from '@/components/ui/error-base';
+import { ErrorBase } from '@/components/ui/error-base';
 
 import { formatTitle } from '@/utils/metadata';
 
