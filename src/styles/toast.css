@@ -1,0 +1,32 @@
+@layer components {
+  .toast {
+    @apply border! border-stone-300! bg-stone-100! text-stone-900! shadow-lg! dark:border-stone-700! dark:bg-stone-900! dark:text-stone-100!;
+    & [data-icon] {
+      @apply text-stone-500! dark:text-stone-400!;
+    }
+  }
+  .toast[data-type='info'] {
+    @apply border-blue-300! bg-blue-200! text-blue-900! dark:border-blue-800! dark:bg-blue-950! dark:text-blue-100!;
+    & [data-icon] {
+      @apply text-blue-600! dark:text-blue-400!;
+    }
+  }
+  .toast[data-type='success'] {
+    @apply border-green-300! bg-green-200! text-green-900! dark:border-green-800! dark:bg-green-950! dark:text-green-100!;
+    & [data-icon] {
+      @apply text-green-600! dark:text-green-400!;
+    }
+  }
+  .toast[data-type='warning'] {
+    @apply border-amber-300! bg-amber-200! text-amber-900! dark:border-amber-800! dark:bg-amber-950! dark:text-amber-100!;
+    & [data-icon] {
+      @apply text-amber-600! dark:text-amber-400!;
+    }
+  }
+  .toast[data-type='error'] {
+    @apply border-red-300! bg-red-200! text-red-900! dark:border-red-800! dark:bg-red-950! dark:text-red-100!;
+    & [data-icon] {
+      @apply text-red-600! dark:text-red-400!;
+    }
+  }
+}

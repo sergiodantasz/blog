@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <div className='space-y-8 sm:space-y-16'>
+    <div className='w-full space-y-8 sm:space-y-16'>
       <Header />
       <Suspense fallback={<Spinner />}>
         <PostList />
