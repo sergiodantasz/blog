@@ -1,5 +1,4 @@
 import { unstable_cache } from 'next/cache';
-import { notFound } from 'next/navigation';
 
 import { reviveDates } from '@/lib/posts/transform';
 
@@ -19,12 +18,11 @@ export async function findAllPublishedCached() {
 export async function findPublishedBySlugCached(slug: Post['slug']) {
   const post = await unstable_cache(
     async (slug: Post['slug']) => {
-      const post = await postRepository.findPublishedBySlug(slug).catch(() => null);
-      if (!post) notFound();
-      return post;
+      return await postRepository.findPublishedBySlug(slug).catch(() => null);
     },
-    ['posts'],
-    { tags: ['posts', `posts:${slug}`] },
+    ['posts', 'by-slug', slug],
+    { tags: [`posts:${slug}`] },
   )(slug);
+  if (!post) return null;
   return reviveDates(post);
 }
