@@ -23,7 +23,7 @@ export function Input({ labelText, className = '', readOnly, ...props }: InputPr
       <input
         id={id}
         readOnly={readOnly}
-        className={`rounded-md border border-stone-300 p-2 text-sm text-stone-900 transition-colors outline-none placeholder:text-sm placeholder:text-stone-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-stone-700 dark:text-stone-50 dark:placeholder:text-stone-500 ${readOnlyStyles} ${className}`}
+        className={`rounded-md border border-stone-300 p-2 text-stone-900 transition-colors outline-none placeholder:text-stone-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-stone-700 dark:text-stone-50 dark:placeholder:text-stone-500 ${readOnlyStyles} ${className}`}
         {...props}
       />
     </div>
