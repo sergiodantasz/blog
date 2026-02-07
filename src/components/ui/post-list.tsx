@@ -9,6 +9,13 @@ export async function PostList() {
   const posts = await findAllPublishedCached();
   const groupedPosts = groupPostsByYear(posts);
   const sortedPosts = sortGroupedPostsByYear(groupedPosts);
+  if (posts.length === 0) {
+    return (
+      <div className='flex items-center justify-center rounded-lg border border-stone-200 bg-stone-100/50 p-4 sm:p-8 dark:border-stone-800 dark:bg-stone-900/50'>
+        <p className='text-center text-stone-600 dark:text-stone-400'>No posts available yet.</p>
+      </div>
+    );
+  }
   return (
     <div className='[&>div:last-child>div:last-child>a:last-child]:border-b [&>div:last-child>div:last-child>a:last-child]:border-b-stone-200 [&>div:last-child>div:last-child>a:last-child]:dark:border-b-stone-800'>
       {sortedPosts.map(({ year, posts }) => (
