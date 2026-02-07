@@ -10,21 +10,30 @@ export function Menu() {
         href='/'
         target='_blank'
       >
-        <HouseIcon size={16} />
+        <HouseIcon
+          size={16}
+          className='shrink-0'
+        />
         <span>Home</span>
       </a>
       <Link
         className='flex items-center justify-center gap-1 self-stretch px-4 py-2 transition-all hover:bg-stone-300 dark:hover:bg-stone-900'
         href='/admin/posts'
       >
-        <NewspaperIcon size={16} />
+        <NewspaperIcon
+          size={16}
+          className='shrink-0'
+        />
         <span>Posts</span>
       </Link>
       <Link
         className='flex items-center justify-center gap-1 self-stretch rounded-se-[7px] rounded-ee-[7px] px-4 py-2 transition-all hover:bg-stone-300 dark:hover:bg-stone-900'
         href='/admin/posts/new'
       >
-        <PlusIcon size={16} />
+        <PlusIcon
+          size={16}
+          className='shrink-0'
+        />
         <span>New post</span>
       </Link>
     </nav>
