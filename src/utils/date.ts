@@ -8,3 +8,7 @@ export function formatDayMonth(date: Date) {
 export function formatMonthDayYear(date: Date) {
   return format(date, 'MMMM do, yyyy', { locale: enUS });
 }
+
+export function formatDayMonthYear(date: Date) {
+  return format(date, 'dd/MM/yyyy', { locale: enUS });
+}
