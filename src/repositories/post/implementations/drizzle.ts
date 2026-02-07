@@ -1,4 +1,7 @@
+import { eq } from 'drizzle-orm';
+
 import { db } from '@/db/client';
+import { posts } from '@/db/schema';
 
 import type { Post } from '@/models/post';
 
@@ -35,5 +38,9 @@ export class DrizzlePostRepository implements PostRepository {
       throw new Error(`Post with slug "${slug}" not found.`);
     }
     return post;
+  }
+
+  async delete(id: Post['id']): Promise<void> {
+    await db.delete(posts).where(eq(posts.id, id));
   }
 }
