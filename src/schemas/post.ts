@@ -17,11 +17,6 @@ export const PostSchema = z.object({
   //   .trim()
   //   .min(2, 'The author must be at least 2 characters long.')
   //   .max(30, 'The author must have a maximum of 30 characters.'),
-  excerpt: z
-    .string()
-    .trim()
-    .min(3, 'The excerpt must be at least 3 characters long.')
-    .max(200, 'The excerpt must have a maximum of 200 characters.'),
   isPublished: z
     .union([
       z.literal('on'),

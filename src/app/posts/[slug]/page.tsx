@@ -21,7 +21,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) notFound();
   return {
     title: post.title,
-    description: post.excerpt,
   };
 }
 

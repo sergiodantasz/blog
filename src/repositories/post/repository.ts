@@ -9,6 +9,6 @@ export interface PostRepository {
   create(post: Post): Promise<void>;
   update(
     id: Post['id'],
-    newData: Pick<Post, 'title' | 'content' | 'excerpt' | 'slug' | 'isPublished'>,
+    newData: Pick<Post, 'title' | 'content' | 'slug' | 'isPublished'>,
   ): Promise<void>;
 }

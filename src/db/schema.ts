@@ -6,7 +6,6 @@ export const posts = sqliteTable('users', {
   id: text('id').primaryKey(),
   title: text('title').notNull(),
   slug: text('slug').notNull().unique(),
-  excerpt: text('excerpt').notNull(),
   content: text('content').notNull(),
   isPublished: integer('is_published', { mode: 'boolean' }).notNull(),
   createdAt: date('created_at').notNull(),

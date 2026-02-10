@@ -62,7 +62,7 @@ export class DrizzlePostRepository implements PostRepository {
 
   async update(
     id: Post['id'],
-    newData: Pick<Post, 'title' | 'content' | 'excerpt' | 'slug' | 'isPublished'>,
+    newData: Pick<Post, 'title' | 'content' | 'slug' | 'isPublished'>,
   ): Promise<void> {
     try {
       await this.findById(id);
@@ -72,7 +72,6 @@ export class DrizzlePostRepository implements PostRepository {
     const postData = {
       title: newData.title,
       content: newData.content,
-      excerpt: newData.excerpt,
       slug: newData.slug,
       isPublished: newData.isPublished,
     };

@@ -2,7 +2,6 @@ CREATE TABLE `users` (
 	`id` text PRIMARY KEY NOT NULL,
 	`title` text NOT NULL,
 	`slug` text NOT NULL,
-	`excerpt` text NOT NULL,
 	`content` text NOT NULL,
 	`is_published` integer NOT NULL,
 	`created_at` text NOT NULL,

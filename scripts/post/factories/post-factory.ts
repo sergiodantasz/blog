@@ -10,7 +10,6 @@ export function createRandomPost(): InsertPost {
     id: faker.string.uuid(),
     title,
     slug: generateSlug(title),
-    excerpt: faker.lorem.paragraph({ min: 5, max: 10 }),
     content: faker.lorem.paragraphs({ min: 5, max: 10 }),
     isPublished: faker.datatype.boolean({ probability: 0.7 }),
     createdAt,

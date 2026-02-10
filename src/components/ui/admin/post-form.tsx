@@ -56,13 +56,6 @@ export function PostForm(props: PostFormProps) {
         placeholder='Type the title...'
         defaultValue={formState.title}
       />
-      <Input
-        type='text'
-        labelText='Excerpt'
-        name='excerpt'
-        placeholder='Type the excerpt...'
-        defaultValue={formState.excerpt}
-      />
       <Checkbox
         labelText='Published?'
         name='isPublished'
