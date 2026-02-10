@@ -12,15 +12,14 @@ import { useTheme } from '@/hooks/use-theme';
 const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false });
 
 type MarkdownEditorProps = {
-  textarea: {
-    name: string;
-    disabled?: boolean;
-  };
+  name: string;
+  disabled?: boolean;
+  defaultValue?: string;
 };
 
-export function MarkdownEditor({ textarea: { name, disabled = false } }: MarkdownEditorProps) {
+export function MarkdownEditor({ name, disabled = false, defaultValue }: MarkdownEditorProps) {
   const { resolvedTheme } = useTheme();
-  const [value, setValue] = useState<string | undefined>('');
+  const [value, setValue] = useState<string | undefined>(defaultValue);
   const id = useId();
   const wrapperRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
