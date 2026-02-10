@@ -23,10 +23,11 @@ export function DeletePostActions({ post }: DeletePostActionsProps) {
       const result = await deletePost(post.id);
       setIsDeleted(true);
       router.back();
+      toast.dismiss();
       if (result?.error) {
         toast.error(result.error);
       } else {
-        toast.success('The post has been successfully deleted.');
+        toast.success('The post has been deleted.');
       }
     });
   };
