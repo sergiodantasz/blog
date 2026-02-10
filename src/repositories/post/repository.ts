@@ -6,4 +6,9 @@ export interface PostRepository {
   findAllPublished(): Promise<Post[]>;
   findPublishedBySlug(slug: Post['slug']): Promise<Post>;
   delete(id: Post['id']): Promise<void>;
+  create(post: Post): Promise<void>;
+  update(
+    id: Post['id'],
+    newData: Pick<Post, 'title' | 'content' | 'excerpt' | 'slug' | 'isPublished'>,
+  ): Promise<void>;
 }
