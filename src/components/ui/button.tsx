@@ -20,9 +20,9 @@ const variantStyles: Record<ButtonVariant, string> = {
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-6 py-3 text-lg',
+  sm: 'px-3 py-1.5 text-sm [&>svg]:size-4',
+  md: 'px-4 py-2 text-base [&>svg]:size-5',
+  lg: 'px-6 py-3 text-lg [&>svg]:size-6',
 };
 
 export function Button({
@@ -37,7 +37,7 @@ export function Button({
   return (
     <button
       ref={ref}
-      className={`cursor-pointer rounded-lg font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      className={`flex cursor-pointer items-center justify-center gap-2 rounded-lg text-center font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
       disabled={disabled}
       {...props}
     >
