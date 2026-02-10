@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Trash2Icon } from 'lucide-react';
+import { ExternalLinkIcon, PencilIcon, Trash2Icon } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 
@@ -56,7 +56,20 @@ export async function PostList() {
               key={post.id}
               className='transition-all hover:bg-stone-100 dark:hover:bg-stone-900'
             >
-              <td className='w-full px-2 py-3 font-semibold'>{post.title}</td>
+              <td className='w-full px-2 py-3 font-semibold'>
+                {post.isPublished ?
+                  <Link
+                    href={`/posts/${post.slug}`}
+                    className='group relative block'
+                  >
+                    <span className='transition-opacity group-hover:opacity-0'>{post.title}</span>
+                    <ExternalLinkIcon
+                      size={16}
+                      className='absolute inset-0 m-auto opacity-0 transition-opacity group-hover:opacity-100'
+                    />
+                  </Link>
+                : <span>{post.title}</span>}
+              </td>
               <td className='px-2 text-sm text-stone-600 dark:text-stone-400'>
                 <div className='flex h-12 items-center'>{formatDayMonthYear(post.createdAt)}</div>
               </td>
@@ -68,14 +81,25 @@ export async function PostList() {
                 </div>
               </td>
               <td className='px-2'>
-                <div className='flex h-12 items-center'>
+                <div className='flex h-12 items-center gap-1'>
                   <Link
+                    className='flex items-center justify-center rounded-md bg-red-200 p-1 transition-all hover:bg-red-300 dark:bg-red-950 dark:hover:bg-red-900'
                     href={`/admin/posts/${post.id}/delete`}
                     scroll={false}
                   >
                     <Trash2Icon
                       size={20}
-                      className='text-red-600 transition-all hover:text-red-700 dark:text-red-400 dark:hover:text-red-500'
+                      className='text-red-600 dark:text-red-500'
+                    />
+                  </Link>
+                  <Link
+                    className='flex items-center justify-center rounded-md bg-yellow-200 p-1 transition-all hover:bg-yellow-300 dark:bg-yellow-950 dark:hover:bg-yellow-900'
+                    href={`/admin/posts/${post.id}/edit`}
+                    scroll={false}
+                  >
+                    <PencilIcon
+                      size={20}
+                      className='text-yellow-600 dark:text-yellow-500'
                     />
                   </Link>
                 </div>
