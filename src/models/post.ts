@@ -8,3 +8,5 @@ export type Post = {
   createdAt: Date;
   author: string;
 };
+
+export type PostFormDTO = Pick<Post, 'title' | 'excerpt' | 'content' | 'isPublished'>;
