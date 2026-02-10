@@ -9,7 +9,9 @@ export function Toaster() {
   return (
     <SonnerToaster
       theme={resolvedTheme}
-      toastOptions={{ classNames: { toast: 'toast' } }}
+      toastOptions={{ classNames: { toast: 'toast' }, duration: 6000 }}
+      expand={true}
+      visibleToasts={9}
     />
   );
 }
