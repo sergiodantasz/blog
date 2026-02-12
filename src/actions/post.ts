@@ -68,7 +68,6 @@ export async function createPost(
     createdAt: new Date(),
     id: randomUUID(),
     slug: `${slug(zodParsedObj.data.title)}-${generateRandomString(3)}`,
-    author: 'sergio',
   };
   try {
     await postRepository.create(newPost);

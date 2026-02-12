@@ -12,11 +12,6 @@ export const PostSchema = z.object({
     .trim()
     .min(3, 'The content must be at least 3 characters long.')
     .transform((val) => sanitizeHtml(val)),
-  // author: z
-  //   .string()
-  //   .trim()
-  //   .min(2, 'The author must be at least 2 characters long.')
-  //   .max(30, 'The author must have a maximum of 30 characters.'),
   isPublished: z
     .union([
       z.literal('on'),

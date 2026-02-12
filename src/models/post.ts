@@ -5,7 +5,6 @@ export type Post = {
   content: string;
   isPublished: boolean;
   createdAt: Date;
-  author: string;
 };
 
 export type PostFormDTO = Pick<Post, 'title' | 'content' | 'isPublished'>;

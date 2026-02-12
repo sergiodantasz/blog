@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "9411ee53-b749-4503-92e5-9c4569d51661",
+  "id": "9dd66822-ed31-4da7-a7ed-16d11bb29a36",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "users": {
@@ -44,13 +44,6 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "author": {
-          "name": "author",
           "type": "text",
           "primaryKey": false,
           "notNull": true,

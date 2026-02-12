@@ -13,7 +13,6 @@ export function createRandomPost(): InsertPost {
     content: faker.lorem.paragraphs({ min: 5, max: 10 }),
     isPublished: faker.datatype.boolean({ probability: 0.7 }),
     createdAt,
-    author: faker.person.fullName(),
   };
 }
 
