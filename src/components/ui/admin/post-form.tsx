@@ -33,9 +33,7 @@ export function PostForm(props: PostFormProps) {
   const [state, action, isPending] = useActionState(serverAction, initialState);
   useEffect(() => {
     toast.dismiss();
-    if (state.errors.length > 0) {
-      state.errors.forEach((error) => toast.error(error));
-    }
+    state.errors.forEach((error) => toast.error(error));
   }, [state.errors]);
   useEffect(() => {
     if (state.success) {
@@ -44,6 +42,7 @@ export function PostForm(props: PostFormProps) {
     }
   }, [state.success, router, isEditing]);
   const { formState } = state;
+  const isDisabled = isPending || state.success;
   return (
     <form
       action={action}
@@ -55,17 +54,20 @@ export function PostForm(props: PostFormProps) {
         name='title'
         placeholder='Type the title...'
         defaultValue={formState.title}
+        disabled={isDisabled}
       />
       <Checkbox
         labelText='Published?'
         name='isPublished'
         defaultChecked={formState.isPublished}
+        disabled={isDisabled}
       />
       <MarkdownEditor
         name='content'
         defaultValue={formState.content}
+        disabled={isDisabled}
       />
-      <Button disabled={isPending || state.success}>{isEditing ? 'Update' : 'Create'}</Button>
+      <Button disabled={isDisabled}>{isEditing ? 'Update' : 'Create'}</Button>
     </form>
   );
 }
