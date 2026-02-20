@@ -1,11 +1,11 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "9dd66822-ed31-4da7-a7ed-16d11bb29a36",
+  "id": "e2b2bb78-807b-49dc-9296-9b0c47503722",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "users": {
-      "name": "users",
+    "posts": {
+      "name": "posts",
       "columns": {
         "id": {
           "name": "id",
@@ -51,8 +51,8 @@
         }
       },
       "indexes": {
-        "users_slug_unique": {
-          "name": "users_slug_unique",
+        "posts_slug_unique": {
+          "name": "posts_slug_unique",
           "columns": [
             "slug"
           ],

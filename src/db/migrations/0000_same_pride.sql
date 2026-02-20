@@ -1,4 +1,4 @@
-CREATE TABLE `users` (
+CREATE TABLE `posts` (
 	`id` text PRIMARY KEY NOT NULL,
 	`title` text NOT NULL,
 	`slug` text NOT NULL,
@@ -7,4 +7,4 @@ CREATE TABLE `users` (
 	`created_at` text NOT NULL
 );
 --> statement-breakpoint
-CREATE UNIQUE INDEX `users_slug_unique` ON `users` (`slug`);
+CREATE UNIQUE INDEX `posts_slug_unique` ON `posts` (`slug`);
