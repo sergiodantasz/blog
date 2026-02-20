@@ -1,12 +1,11 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 import { PostForm } from '@/components/ui/admin/post-form';
 
 import { withPostFormDefaults } from '@/lib/posts/defaults';
-import { findByIdCached } from '@/lib/posts/queries/admin';
+import { findById } from '@/lib/posts/queries/admin';
 
-import { Post } from '@/models/post';
+import type { Post } from '@/models/post';
 
 type PageProps = {
   params: Promise<{ id: Post['id'] }>;
@@ -14,8 +13,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const post = await findByIdCached(id);
-  if (!post) notFound();
+  const post = await findById(id);
   return {
     title: `Edit "${post.title}"`,
   };
@@ -23,8 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
-  const post = await findByIdCached(id);
-  if (!post) notFound();
+  const post = await findById(id);
   const postDTO = withPostFormDefaults(post);
   return (
     <PostForm

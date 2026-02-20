@@ -4,14 +4,14 @@ import { ExternalLinkIcon, PencilIcon, Trash2Icon } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 
-import { findAllCached } from '@/lib/posts/queries/admin';
+import { findAll } from '@/lib/posts/queries/admin';
 import { sortPostsByDate } from '@/lib/posts/transform';
 
 import { formatDayMonthYear } from '@/utils/date';
 
 export async function PostList() {
-  const posts = await findAllCached();
-  const sortedPosts = sortPostsByDate(posts, 'asc');
+  const posts = await findAll();
+  const sortedPosts = sortPostsByDate(posts, 'desc');
   if (posts.length === 0) {
     return (
       <div className='flex items-center justify-center rounded-lg border border-stone-200 bg-stone-100/50 p-4 sm:p-8 dark:border-stone-800 dark:bg-stone-900/50'>
