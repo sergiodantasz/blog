@@ -24,10 +24,10 @@ export function DeletePostActions({ post }: DeletePostActionsProps) {
       setIsDeleted(true);
       router.back();
       toast.dismiss();
-      if (result?.error) {
-        toast.error(result.error);
-      } else {
+      if (result.success) {
         toast.success('The post has been deleted.');
+      } else {
+        toast.error(result.error);
       }
     });
   };
