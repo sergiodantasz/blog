@@ -1,4 +1,4 @@
-import { Post, PostFormDTO } from '@/models/post';
+import type { Post, PostFormDTO } from '@/models/post';
 
 const postFormDefaults: PostFormDTO = {
   title: '',

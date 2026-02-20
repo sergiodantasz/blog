@@ -2,7 +2,7 @@ import { unstable_cache } from 'next/cache';
 
 import { reviveDates } from '@/lib/posts/transform';
 
-import { Post } from '@/models/post';
+import type { Post } from '@/models/post';
 
 import { postRepository } from '@/repositories/post';
 
