@@ -1,4 +1,4 @@
-import z from 'zod';
+import { z } from 'zod';
 
 export function getZodErrorMessages<T>(error: z.ZodError<T>): string[] {
   const errors = z.flattenError(error);

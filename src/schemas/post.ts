@@ -1,5 +1,5 @@
 import sanitizeHtml from 'sanitize-html';
-import z from 'zod';
+import { z } from 'zod';
 
 export const PostSchema = z.object({
   title: z
