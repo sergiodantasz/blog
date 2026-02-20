@@ -1,11 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { SafeMarkdown } from '@/components/layout/safe-markdown';
 
 import { findPublishedBySlugCached } from '@/lib/posts/queries/public';
 
-import { Post } from '@/models/post';
+import type { Post } from '@/models/post';
 
 import { formatMonthDayYear } from '@/utils/date';
 

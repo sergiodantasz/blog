@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import { PostForm } from '@/components/ui/admin/post-form';
 

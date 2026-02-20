@@ -1,10 +1,10 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import { DeletePostConfirmation } from '@/components/ui/admin/delete-post-confirmation';
 
-import { findByIdCached } from '@/lib/posts/queries/admin';
+import { findById } from '@/lib/posts/queries/admin';
 
-import { Post } from '@/models/post';
+import type { Post } from '@/models/post';
 
 type PageProps = {
   params: Promise<{ id: Post['id'] }>;
@@ -12,7 +12,7 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const post = await findByIdCached(id);
+  const post = await findById(id);
   return {
     title: `Delete "${post.title}"`,
   };
@@ -20,6 +20,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
-  const post = await findByIdCached(id);
+  const post = await findById(id);
   return <DeletePostConfirmation post={post} />;
 }

@@ -1,7 +1,5 @@
-'use client';
-
 type ErrorBaseProps = {
-  statusCode: 404 | 500;
+  statusCode: 403 | 404 | 500;
   description: string;
 };
 
