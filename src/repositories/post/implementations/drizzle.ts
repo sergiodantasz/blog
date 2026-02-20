@@ -9,8 +9,7 @@ import type { PostRepository } from '@/repositories/post/repository';
 
 export class DrizzlePostRepository implements PostRepository {
   async findAll(): Promise<Post[]> {
-    const posts = await db.query.posts.findMany();
-    return posts;
+    return db.query.posts.findMany();
   }
 
   async findById(id: Post['id']): Promise<Post> {
@@ -24,10 +23,9 @@ export class DrizzlePostRepository implements PostRepository {
   }
 
   async findAllPublished(): Promise<Post[]> {
-    const posts = await db.query.posts.findMany({
+    return db.query.posts.findMany({
       where: (table, { eq }) => eq(table.isPublished, true),
     });
-    return posts;
   }
 
   async findPublishedBySlug(slug: Post['slug']): Promise<Post> {
@@ -41,11 +39,7 @@ export class DrizzlePostRepository implements PostRepository {
   }
 
   async delete(id: Post['id']): Promise<void> {
-    try {
-      await this.findById(id);
-    } catch (e) {
-      throw e;
-    }
+    await this.findById(id);
     await db.delete(posts).where(eq(posts.id, id));
   }
 
@@ -54,7 +48,7 @@ export class DrizzlePostRepository implements PostRepository {
       where: (table, { or, eq }) => or(eq(table.id, post.id), eq(table.slug, post.slug)),
       columns: { id: true },
     });
-    if (!!postExists) {
+    if (postExists) {
       throw new Error(`Post with id "${post.id}" or slug "${post.slug}" already exists.`);
     }
     await db.insert(posts).values(post);
@@ -64,17 +58,7 @@ export class DrizzlePostRepository implements PostRepository {
     id: Post['id'],
     newData: Pick<Post, 'title' | 'content' | 'slug' | 'isPublished'>,
   ): Promise<void> {
-    try {
-      await this.findById(id);
-    } catch (e) {
-      throw e;
-    }
-    const postData = {
-      title: newData.title,
-      content: newData.content,
-      slug: newData.slug,
-      isPublished: newData.isPublished,
-    };
-    await db.update(posts).set(postData).where(eq(posts.id, id));
+    await this.findById(id);
+    await db.update(posts).set(newData).where(eq(posts.id, id));
   }
 }
