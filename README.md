@@ -62,6 +62,9 @@ The home page shows the list of published posts, while the admin interface is av
 
 ## URLs
 
-In development the main pages are available at `http://localhost:3000`, with the posts list at `/`,
-individual posts at `/posts/[slug]`, the admin dashboard at `/admin`, and the admin login at
-`/admin/login`.
+In development the base URL is `http://localhost:3000`. Main routes:
+
+- `/` — posts list (home)
+- `/posts/[slug]` — individual post
+- `/admin` — admin dashboard
+- `/admin/login` — admin login
