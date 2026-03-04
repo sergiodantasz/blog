@@ -6,3 +6,12 @@
 
 @import '../styles/toast.css';
 @import '../styles/markdown-editor.css';
+
+.prose :not(pre) > code {
+  @apply rounded-md bg-stone-100 px-1.5 py-0.5 text-[0.9em] dark:bg-stone-800;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: none;
+}
